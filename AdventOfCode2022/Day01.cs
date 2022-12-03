@@ -15,7 +15,7 @@ public class Day01
             .Max()
             .Should().Be(result);
     }
-    
+
     [Theory]
     [InlineData("Day01_Example.txt", 45000)]
     [InlineData("Day01.txt", 209914)]
@@ -30,12 +30,10 @@ public class Day01
             .Should().Be(result);
     }
 
-    private static async Task<int?[]> ReadInput(string inputPath)
+    private static async Task<IEnumerable<int?>> ReadInput(string inputPath)
     {
         var lines = await File.ReadAllLinesAsync(inputPath);
-        return lines
-            .Select(s => int.TryParse(s, out var result) ? (int?) result : null)
-            .ToArray();
+        return lines.Select(s => int.TryParse(s, out var result) ? (int?) result : null);
     }
 }
 
@@ -55,7 +53,7 @@ public static class Extensions
                 yield return temp;
             }
         }
-        
+
         yield return sumForElf;
     }
 }
