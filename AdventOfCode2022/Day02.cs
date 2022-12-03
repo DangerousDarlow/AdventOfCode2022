@@ -18,7 +18,7 @@ public class Day02
     [InlineData("Day02.txt", 10274)]
     public async Task Part2(string inputPath, int result)
     {
-        var input = (await ReadInput(inputPath, ToRoundPart2)).ToList();
+        var input = await ReadInput(inputPath, ToRoundPart2);
         input.Select(round => round.Score).Sum().Should().Be(result);
     }
 

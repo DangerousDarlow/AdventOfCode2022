@@ -48,9 +48,8 @@ public static class Extensions
                 sumForElf += value.Value;
             else
             {
-                var temp = sumForElf;
+                yield return sumForElf;
                 sumForElf = 0;
-                yield return temp;
             }
         }
 
