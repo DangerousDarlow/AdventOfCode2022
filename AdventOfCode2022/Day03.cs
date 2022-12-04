@@ -1,8 +1,8 @@
 using FluentAssertions;
 
-namespace AdventOfCode2022;
+namespace AdventOfCode2022.Day03;
 
-public class Day03
+public class Solution
 {
     [Theory]
     [InlineData("Day03_Example.txt", 157)]
